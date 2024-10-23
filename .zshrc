@@ -4,6 +4,7 @@
 # starship preset bracketed-segments -o ~/.config/starship.toml
 # ```
 # and add `disabled = false` to `~/.config/starship.toml` `[time]` section
+# and `format = "$all$time$line_break$character"` to `~/.config/starship.toml` first line
 #
 # Also, you need to install fzf, if no latest fzf provided:
 # `git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf`
