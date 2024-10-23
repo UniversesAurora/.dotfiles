@@ -20,3 +20,9 @@ then use GNU stow to create symlinks
 ```sh
 $ stow .
 ```
+
+If file exists, use this to **overwrite file in repo**:
+
+```sh
+$ stow --adopt .
+```
