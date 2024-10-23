@@ -235,28 +235,28 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
 	bindkey "^[[1;5C" forward-word
 	bindkey "^[[1;5D" backward-word
-
-	rename_title() {
-		local cmd=$1
-		if [ -z "$cmd" ]; then
-			cmd="zsh"
-		fi
-		print -Pn "\e]0;$cmd-${CUR_USER}@${HOST}:${PWD/#$HOME/~}\a"
-	}
-
-	case "$TERM" in
-	xterm*|rxvt*)
-		preexec() {
-			rename_title $1
-		}
-		precmd() {
-			rename_title $1
-		}
-		;;
-	*)
-		;;
-	esac
 fi
+
+rename_title() {
+	local cmd=$1
+	if [ -z "$cmd" ]; then
+		cmd="zsh"
+	fi
+	print -Pn "\e]0;$cmd-${CUR_USER}@${HOST}:${PWD/#$HOME/~}\a"
+}
+
+case "$TERM" in
+xterm*|rxvt*)
+	preexec() {
+		rename_title $1
+	}
+	precmd() {
+		rename_title $1
+	}
+	;;
+*)
+	;;
+esac
 
 if [ `pwd` = "${HOME}" ] && [ -d "${HOME}/Downloads" ]; then
 	cd Downloads
