@@ -6,9 +6,11 @@
 # and add `disabled = false` to `~/.config/starship.toml` `[time]` section
 # and `format = "$all$time$line_break$character"` to `~/.config/starship.toml` first line
 #
-# Also, you need to install fzf, if no latest fzf provided:
-# `git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf`
-# and some other plugins, which will show in first run
+# Also, you need to install fzf, zoxide, eza:
+# https://github.com/junegunn/fzf?tab=readme-ov-file#using-git
+# https://github.com/ajeetdsouza/zoxide#installation
+# https://github.com/eza-community/eza/blob/main/INSTALL.md
+# this will show at start if not installed
 
 # variables
 CUR_USER=$(whoami)
