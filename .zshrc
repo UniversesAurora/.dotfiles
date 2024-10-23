@@ -136,8 +136,8 @@ fi
 zstyle ':fzf-tab:*' fzf-flags --color fg:240,bg:230,hl:33,fg+:241,bg+:221,hl+:33,info:33,prompt:33,pointer:166,marker:166,spinner:33 --layout=reverse --info=inline --margin=1 --padding=1 --ansi --preview-window=right:50% --bind=tab:accept --pointer '❯'
 # switch group using `<` and `>`
 zstyle ':fzf-tab:*' switch-group '<' '>'
-# use alt+/ to select multiple files
-zstyle ':fzf-tab:*' fzf-bindings 'alt-/:toggle'
+# use alt+/ or ctrl+] to select multiple files
+zstyle ':fzf-tab:*' fzf-bindings 'alt-/:toggle,ctrl-]:toggle'
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 # Proxy
