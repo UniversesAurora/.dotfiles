@@ -19,6 +19,8 @@ then use GNU stow to create symlinks
 
 ```sh
 $ stow .
+# or to a specific path
+$ stow -t ~ .
 ```
 
 If file exists, use this to **overwrite file in repo**:
