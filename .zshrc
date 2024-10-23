@@ -178,6 +178,8 @@ else
 fi
 
 # zoxide
+[ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
+
 if command -v zoxide >/dev/null 2>&1; then
 	eval "$(zoxide init --cmd cd zsh)"
 else
@@ -261,3 +263,4 @@ esac
 if [ `pwd` = "${HOME}" ] && [ -d "${HOME}/Downloads" ]; then
 	cd Downloads
 fi
+
