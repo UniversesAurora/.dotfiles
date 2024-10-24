@@ -18,13 +18,15 @@ $ cd .dotfiles
 then use GNU stow to create symlinks
 
 ```sh
-$ stow .
+$ stow zsh
+$ stow vim
 # or to a specific path
-$ stow -t ~ .
+$ stow -t ~ zsh
+$ stow -t ~ vim
 ```
 
 If file exists, use this to **overwrite file in repo**:
 
 ```sh
-$ stow --adopt .
+$ stow --adopt zsh
 ```
