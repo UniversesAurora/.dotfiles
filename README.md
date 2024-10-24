@@ -40,3 +40,9 @@ nvim config file is in another repo, so if you forgot to clone submodule, you ne
 $ git submodule update --init --recursive
 $ stow -v -t ~ nvim
 ```
+
+If nvim config repo has update, you need to also update this repo. And in other clone need to run:
+
+```sh
+$ git submodule update --remote --merge
+```
