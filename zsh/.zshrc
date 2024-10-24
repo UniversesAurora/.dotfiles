@@ -136,7 +136,7 @@ else
 	zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 fi
 # zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept
-zstyle ':fzf-tab:*' fzf-flags --color fg:240,bg:230,hl:33,fg+:241,bg+:221,hl+:33,info:33,prompt:33,pointer:166,marker:166,spinner:33 --layout=reverse --info=inline --margin=1 --padding=1 --ansi --preview-window=right:50% --bind=tab:accept --pointer '❯'
+zstyle ':fzf-tab:*' fzf-flags --color fg:240,bg:230,hl:33,fg+:241,bg+:221,hl+:33,info:33,prompt:33,pointer:166,marker:166,spinner:33 --height ~90% --layout=reverse --info=inline --margin=1 --padding=1 --ansi --preview-window=right:90% --bind=tab:accept --pointer '❯'
 # switch group using `<` and `>`
 zstyle ':fzf-tab:*' switch-group '<' '>'
 # use alt+/ or ctrl+] to select multiple files
