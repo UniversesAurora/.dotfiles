@@ -201,6 +201,8 @@ if [ -d "$HOME/.jenv" ]; then
 	eval "$(jenv init -)"
 fi
 
+# go apps
+[ -d "$HOME/go/bin" ] && export PATH="$HOME/go/bin:$PATH"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
 	# macOS-specific configuration
