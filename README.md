@@ -33,10 +33,10 @@ $ stow --adopt zsh
 
 ### nvim
 
-nvim config file is in another repo, so installation process is a little different:
+nvim config file is in another repo, so if you forgot to clone submodule, you need to run this:
 
 ```sh
 # if you forgot to clone submodule
 $ git submodule update --init --recursive
-$ stow --no-folding -v -t ~ nvim
+$ stow -v -t ~ nvim
 ```
