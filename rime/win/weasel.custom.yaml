@@ -1,0 +1,135 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.16.3
+  generator: "Weasel::UIStyleSettings"
+  modified_time: "Fri Oct 18 23:25:39 2024"
+  rime_version: 1.11.2
+
+patch:
+  "style/color_scheme": purple_dream
+  "style/color_scheme_dark": purple_dream_night
+  style/font_face: "New York, Source Serif Pro, Segoe UI Emoji, Noto Color Emoji, FZYanZhenQingKaiShuJF, LXGW WenKai, STFangsong, FangSong, Noto Serif SC, HanaMinA, HanaMinB"
+  style/label_font_face: "New York, Source Serif Pro, Segoe UI Emoji, Noto Color Emoji, FZYanZhenQingKaiShuJF, LXGW WenKai, STFangsong, FangSong, Noto Serif SC, HanaMinA, HanaMinB"
+  style/comment_font_face: "New York, Source Serif Pro, Segoe UI Emoji, Noto Color Emoji, FZYanZhenQingKaiShuJF, LXGW WenKai, STFangsong, FangSong, Noto Serif SC, HanaMinA, HanaMinB"
+  # style/font_point: 12
+  # style/label_font_point: 12
+  # style/comment_font_point: 11
+  style/inline_preedit: false
+  style/hover_type: semi_hilite
+  # style/horizontal: false
+  style/layout/baseline: 100  # 100% of font point height
+  style/layout/linespacing: 140   # 140% of font point height, when flicker happened, should be a value larger than 100
+  style/layout/border_width: 4            # 边框宽度；又名 border
+  style/layout/margin_x: 8                # 主体元素和候选框的左右边距；为负值时，不显示候选框
+  style/layout/margin_y: 6                # 主体元素的上下边距；为负值时，不显示候选框
+  style/layout/spacing: 4                 # inline_preedit 为否时，编码区域和候选区域的间距
+  style/layout/hilite_padding: 2          # 高亮区域和内部文字的间距，影响高亮区域大小
+  style/layout/shadow_radius: 4
+  style/layout/shadow_offset_x: 0
+  style/layout/shadow_offset_y: 3
+  style/layout/corner_radius: 2           # 候选窗口圆角半径
+  style/layout/round_corner: 1            # 候选背景色块圆角半径，又名 hilited_corner_radius
+
+  app_options/+:
+    cmd.exe:               # 带 .exe 的进程名：Weasel 15.0 及之前版本须小写
+      ascii_mode: true     # 英文模式
+    conhost.exe:
+      ascii_mode: true
+    WindowsTerminal.exe:
+      ascii_mode: true
+      vim_mode: true
+    wt.exe:
+      ascii_mode: true
+    pwsh.exe:
+      ascii_mode: true
+    powershell.exe:
+      ascii_mode: true
+    mintty.exe:
+      ascii_mode: true
+    nvim-qt.exe:
+      ascii_mode: true
+      vim_mode: true       # vim 模式, Esc <C-c> <C-[> 切换到 ascii 状态
+    XshellCore.exe:
+      ascii_mode: true
+      vim_mode: true
+    PowerToys.PowerLauncher.exe:
+      ascii_mode: true
+    1Password.exe:
+      ascii_mode: true
+    Everything.exe:
+      ascii_mode: true
+    ProcessHacker.exe:
+      ascii_mode: true
+    Code.exe:
+      ascii_mode: true
+    kate.exe:
+      ascii_mode: true
+    devenv.exe:
+      ascii_mode: true
+    copyq.exe:
+      ascii_mode: true
+
+  preset_color_schemes/+:
+    purple_dream:                       # 在 `style/color_schema` 指定的配色方案值
+      name: "紫梦"                       # 方案设置中显示的配色名称
+      author: "浮枕"                           # 配色作者名称
+      color_format: rgba                       # 颜色格式：argb（0xaarrggbb）；rgba（0xrrggbbaa）；abgr（0xaabbggrr 默认）
+      # 默认配色
+      text_color: 0x000000C0                     # 文字
+      shadow_color: 0x00000070                 # 阴影
+      label_color: 0x7E57C2                    # 标签
+      comment_text_color: 0x512DA8             # 注释
+      border_color: 0xEDE7F6                   # 边框
+      back_color: 0xEDE7F6                     # 背景
+      # 候选项配色
+      # candidate_back_color: 0xECEFF4         # 背景
+      # candidate_border_color:                # 边框
+      # candidate_shadow_color:                # 阴影
+      candidate_text_color: 0x000000         # 文字
+      # 高亮区域配色
+      hilited_text_color: 0x000000             # 文字
+      hilited_back_color: 0xFFFFFF00             # 背景
+      # hilited_shadow_color:                  # 阴影
+      # 选中的候选区域配色
+      hilited_mark_color: 0x512DA8             # 标签前的标记
+      hilited_label_color: 0x512DA8            # 标签
+      hilited_comment_text_color: 0x311B92     # 注释
+      hilited_candidate_text_color: 0x000000   # 文字
+      hilited_candidate_border_color: 0xD1C4E9 # 边框
+      hilited_candidate_back_color: 0xD1C4E9   # 背景
+      hilited_candidate_shadow_color: 0xD1C4E990       # 阴影
+      # inline_preedit: false 时翻页箭头颜色，不设置则不显示箭头
+      nextpage_color: 0xB39DDB                 # 下一页
+      prevpage_color: 0xB39DDB                 # 上一页
+
+    purple_dream_night:                 # 在 `style/color_schema` 指定的配色方案值
+      name: "紫夜"                       # 方案设置中显示的配色名称
+      author: "浮枕"                           # 配色作者名称
+      color_format: rgba                       # 颜色格式：argb（0xaarrggbb）；rgba（0xrrggbbaa）；abgr（0xaabbggrr 默认）
+      # 默认配色
+      text_color: 0xFFFFFFC0                     # 文字
+      shadow_color: 0x311B9270                 # 阴影
+      label_color: 0xEDE7F6                    # 标签
+      comment_text_color: 0xB39DDB             # 注释
+      border_color: 0x2E1264                   # 边框
+      back_color: 0x2E1264                     # 背景
+      # 候选项配色
+      # candidate_back_color: 0xECEFF4         # 背景
+      # candidate_border_color:                # 边框
+      # candidate_shadow_color:                # 阴影
+      candidate_text_color: 0xFFFFFF         # 文字
+      # 高亮区域配色
+      hilited_text_color: 0xFFFFFF             # 文字
+      hilited_back_color: 0x00000000             # 背景
+      # hilited_shadow_color:                  # 阴影
+      # 选中的候选区域配色
+      hilited_mark_color: 0x512DA8             # 标签前的标记
+      hilited_label_color: 0x512DA8            # 标签
+      hilited_comment_text_color: 0x311B92     # 注释
+      hilited_candidate_text_color: 0x000000   # 文字
+      hilited_candidate_border_color: 0xEDE7F6 # 边框
+      hilited_candidate_back_color: 0xEDE7F6   # 背景
+      hilited_candidate_shadow_color: 0xEDE7F690       # 阴影
+      # inline_preedit: false 时翻页箭头颜色，不设置则不显示箭头
+      nextpage_color: 0xB39DDB                 # 下一页
+      prevpage_color: 0xB39DDB                 # 上一页

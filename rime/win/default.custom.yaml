@@ -1,0 +1,55 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.16.3
+  generator: "Rime::SwitcherSettings"
+  modified_time: "Fri Oct 18 23:25:24 2024"
+  rime_version: 1.11.2
+
+
+patch:
+  schema_list:
+    - {schema: rime_ice}
+
+  menu/page_size: 10
+  switcher/hotkeys:
+    - Control+F8
+  switcher/fold_options: false
+  ascii_composer/switch_key/Shift_L: commit_text
+  ascii_composer/switch_key/Shift_R: commit_code
+  recognizer/patterns/+:
+    url_2: "^[A-Za-z]+[.].*"   # 句号不上屏，支持 google.com abc.txt 等网址或文件名，使用句号翻页时需要注释掉
+    colon: "^[A-Za-z]+:.*"     # 冒号不上屏
+
+  punctuator/half_shape:
+    ',' : '，'
+    '.' : '。'
+    '<' : '《'
+    '>' : '》'
+    '/' : '/'
+    '?' : '？'
+    ';' : '；'
+    ':' : '：'
+    '''' : { pair: [ '‘', '’' ] }
+    '"' : { pair: [ '“', '”' ] }
+    '\' : '、'
+    '|' : '|'
+    '`' : '`'
+    '~' : '~'
+    '!' : '！'
+    '@' : '@'
+    '#' : '#'
+    '%' : '%'
+    '$' : '¥'
+    '^' : '……'
+    '&' : '&'
+    '*' : '*'
+    '(' : '（'
+    ')' : '）'
+    '-' : '-'
+    '_' : ——
+    '+' : '+'
+    '=' : '='
+    '[' : '【'
+    ']' : '】'
+    '{' : '「'
+    '}' : '」'
