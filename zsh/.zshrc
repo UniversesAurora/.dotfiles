@@ -32,7 +32,7 @@ alias path='echo -e ${PATH//:/\\n}'
 alias now='date +"%T"'
 alias nowtime=now
 alias nowdate='date +"%d-%m-%Y"'
-alias vi='vim'
+command -v nvim >/dev/null 2>&1 && alias vi='nvim' || alias vi='vim'
 alias svi='sudo vim'
 alias df='df -H'
 alias du='du -ch'
