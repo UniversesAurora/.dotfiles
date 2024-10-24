@@ -1,0 +1,92 @@
+patch:
+  app_options/+:
+    com.apple.Spotlight:
+      ascii_mode: true
+    com.microsoft.VSCode:
+      ascii_mode: true
+    com.apple.ActivityMonitor:
+      ascii_mode: true
+    com.apple.Terminal:
+      ascii_mode: true
+      vim_mode: true
+    com.1password.1password:
+      ascii_mode: true
+    org.kde.Kate:
+      ascii_mode: true
+    com.apple.dt.Xcode:
+      ascii_mode: true
+    com.wiheads.paste:
+      ascii_mode: true
+    com.apple.finder:
+      ascii_mode: true
+
+
+  "style/color_scheme": purple_dream
+  "style/color_scheme_dark": purple_dream_night
+  style/font_face: "New York, Source Serif Pro, Segoe UI Emoji, Noto Color Emoji, FZYanZhenQingKaiShuJF, LXGW WenKai, STFangsong, FangSong, Noto Serif SC, HanaMinA, HanaMinB"
+  style/label_font_face: "New York, Source Serif Pro, Segoe UI Emoji, Noto Color Emoji, FZYanZhenQingKaiShuJF, LXGW WenKai, STFangsong, FangSong, Noto Serif SC, HanaMinA, HanaMinB"
+  style/comment_font_face: "New York, Source Serif Pro, Segoe UI Emoji, Noto Color Emoji, FZYanZhenQingKaiShuJF, LXGW WenKai, STFangsong, FangSong, Noto Serif SC, HanaMinA, HanaMinB"
+  # style/font_point: 12
+  # style/label_font_point: 12
+  # style/comment_font_point: 11
+  style/inline_preedit: true
+
+  preset_color_schemes/+:
+    purple_dream:                       # 在 `style/color_schema` 指定的配色方案值
+      name: "紫梦"                       # 方案设置中显示的配色名称
+      author: "浮枕"                           # 配色作者名称
+      # font_face: "NewYork-Regular, FZYANZQKSJF--GBK1-0, LXGWWenKai-Regular, STFangsong, HanaMinA, HanaMinB"
+      # font_point: 18.0
+      candidate_list_layout: linear
+      text_orientation: horizontal
+      # inline_preedit: false
+      translucency: true
+      mutual_exclusive: true
+      corner_radius: 4.0
+      hilited_corner_radius: 4.0
+      border_width: 2.0
+      line_spacing: 2.0
+      spacing: 2.0
+      base_offset: 2.0
+      shadow_size: 1.0
+      color_space: display_p3
+      back_color: 0xB2F6E7ED
+      preedit_back_color: 0x9AF7ECF0
+      candidate_text_color: 0x000000
+      comment_text_color: 0xB14660
+      label_color: 0xC2577E
+      hilited_candidate_back_color: 0xE5EBD0D8
+      hilited_candidate_text_color: 0x000000
+      hilited_comment_text_color: 0x921B31
+      hilited_candidate_label_color: 0xA82D51
+      text_color: 0xB3000000
+      hilited_text_color: 0x000000
+
+    purple_dream_night:                 # 在 `style/color_schema` 指定的配色方案值
+      name: "紫夜"                       # 方案设置中显示的配色名称
+      author: "浮枕"                           # 配色作者名称
+      # font_point: 18.0
+      candidate_list_layout: linear
+      text_orientation: horizontal
+      # inline_preedit: false
+      translucency: true
+      mutual_exclusive: true
+      corner_radius: 4.0
+      hilited_corner_radius: 4.0
+      border_width: 2.0
+      line_spacing: 2.0
+      spacing: 2.0
+      base_offset: 2.0
+      shadow_size: 1.0
+      color_space: display_p3
+      back_color: 0xCC64122E
+      preedit_back_color: 0xC6732239
+      candidate_text_color: 0xE6FFFFFF
+      comment_text_color: 0xDEB0BE
+      label_color: 0xF6E7ED
+      hilited_candidate_back_color: 0xE5F6E7ED
+      hilited_candidate_text_color: 0x000000
+      hilited_comment_text_color: 0x921B31
+      hilited_candidate_label_color: 0xA82D51
+      text_color: 0xB3FFFFFF
+      hilited_text_color: 0xE6FFFFFF
