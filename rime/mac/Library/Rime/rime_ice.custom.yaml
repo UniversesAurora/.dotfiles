@@ -1,5 +1,7 @@
 patch:
   reduce_english_filter/mode: all
+  reduce_english_filter/idx: 5
   reduce_english_filter/words/+: [
     youd, you
   ]
+  melt_eng/enable_user_dict: true
