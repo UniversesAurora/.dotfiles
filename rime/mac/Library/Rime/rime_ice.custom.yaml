@@ -1,2 +1,5 @@
 patch:
   reduce_english_filter/mode: all
+  reduce_english_filter/words/+: [
+    youd, you
+  ]
