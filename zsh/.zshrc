@@ -78,6 +78,8 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey '^[^[[A' up-line-or-history
 bindkey '^[^[[B' down-line-or-history
+bindkey "^[^[[C" forward-word
+bindkey "^[^[[D" backward-word
 
 # Load completions
 autoload -Uz compinit && compinit -u
@@ -225,6 +227,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 		# If you're using macOS, you'll want this enabled
 		eval "$(/opt/homebrew/bin/brew shellenv)"
 	fi
+
+	# iTerm2 shell integration
+	test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	# Linux-specific configuration
 	alias ls="ls --color"
