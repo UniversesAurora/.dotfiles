@@ -14,7 +14,7 @@
 
 # variables
 CUR_USER=$(whoami)
-DEFAULT_PROXY="127.0.0.1:7890"
+DEFAULT_PROXY="192.168.119.1:7890"
 LC_CTYPE=en_US.UTF-8
 LC_ALL=en_US.UTF-8
 
@@ -201,6 +201,14 @@ fi
 if [ -d "$HOME/.jenv" ]; then
 	export PATH="$HOME/.jenv/bin:$PATH"
 	eval "$(jenv init -)"
+fi
+
+# nvm
+# install: https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
+if [ -d "$HOME/.nvm" ]; then
+	export NVM_DIR="$HOME/.nvm"
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
 # go apps
