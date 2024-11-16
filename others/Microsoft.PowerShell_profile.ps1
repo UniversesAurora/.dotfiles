@@ -6,7 +6,7 @@ Set-PSReadLineOption -HistorySearchCursorMovesToEnd
 Set-PSReadlineKeyHandler -Key ctrl+d -Function ViExit
 
 Set-Alias sudo gsudo
-Set-Alias vi vim
+Set-Alias vi nvim
 
 function which ($cmd) {
     Get-Command $cmd | Format-List
