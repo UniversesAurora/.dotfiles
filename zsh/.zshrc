@@ -80,6 +80,10 @@ bindkey '^[^[[A' up-line-or-history
 bindkey '^[^[[B' down-line-or-history
 bindkey "^[^[[C" forward-word
 bindkey "^[^[[D" backward-word
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
 
 # Load completions
 autoload -Uz compinit && compinit -u
@@ -251,9 +255,6 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	bindkey "$terminfo[kcud1]" history-substring-search-down
 	bindkey "$terminfo[kUP3]" up-line-or-history
 	bindkey "$terminfo[kDN3]" down-line-or-history
-
-	bindkey "^[[1;5C" forward-word
-	bindkey "^[[1;5D" backward-word
 fi
 
 rename_title() {
