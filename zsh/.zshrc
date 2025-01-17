@@ -32,7 +32,6 @@ alias path='echo -e ${PATH//:/\\n}'
 alias now='date +"%T"'
 alias nowtime=now
 alias nowdate='date +"%d-%m-%Y"'
-command -v nvim >/dev/null 2>&1 && alias vi='nvim' || alias vi='vim'
 alias svi='sudo vim'
 alias df='df -H'
 alias du='du -ch'
@@ -267,6 +266,7 @@ fi
 # go apps
 [ -d "$HOME/go/bin" ] && export PATH="$HOME/go/bin:$PATH"
 
+command -v nvim >/dev/null 2>&1 && alias vi='nvim' || alias vi='vim'
 
 rename_title() {
 	local cmd=$1
