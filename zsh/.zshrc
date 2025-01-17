@@ -161,30 +161,6 @@ function unproxy() {
 }
 
 
-# pyenv
-if [ -d "$HOME/.pyenv" ]; then
-	export PYENV_ROOT="$HOME/.pyenv"
-	[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-	eval "$(pyenv init -)"
-fi
-
-# jenv
-if [ -d "$HOME/.jenv" ]; then
-	export PATH="$HOME/.jenv/bin:$PATH"
-	eval "$(jenv init -)"
-fi
-
-# nvm
-# install: https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
-if [ -d "$HOME/.nvm" ]; then
-	export NVM_DIR="$HOME/.nvm"
-	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-fi
-
-# go apps
-[ -d "$HOME/go/bin" ] && export PATH="$HOME/go/bin:$PATH"
-
 if [[ "$OSTYPE" == "darwin"* ]]; then
 	# macOS-specific configuration
 	alias ls='ls -G'
@@ -266,6 +242,30 @@ if command -v zoxide >/dev/null 2>&1; then
 else
 	echo "zoxide not installed"
 fi
+
+# pyenv
+if [ -d "$HOME/.pyenv" ]; then
+	export PYENV_ROOT="$HOME/.pyenv"
+	[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+	eval "$(pyenv init -)"
+fi
+
+# jenv
+if [ -d "$HOME/.jenv" ]; then
+	export PATH="$HOME/.jenv/bin:$PATH"
+	eval "$(jenv init -)"
+fi
+
+# nvm
+# install: https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
+if [ -d "$HOME/.nvm" ]; then
+	export NVM_DIR="$HOME/.nvm"
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
+
+# go apps
+[ -d "$HOME/go/bin" ] && export PATH="$HOME/go/bin:$PATH"
 
 
 rename_title() {
