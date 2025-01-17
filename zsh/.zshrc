@@ -176,6 +176,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
 	export PATH="/usr/local/sbin:$PATH"
 	export PATH="/Applications/gtkwave.app/Contents/Resources/bin/:$PATH"
+	export PATH="$PATH:/Applications/010 Editor.app/Contents/CmdLine" #ADDED BY 010 EDITOR
 
 	if [[ -f "/opt/homebrew/bin/brew" ]] then
 		# If you're using macOS, you'll want this enabled
