@@ -51,6 +51,14 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
+
 # theme
 # Load starship theme
 # line 1: `starship` binary as command, from github release
@@ -125,29 +133,6 @@ fi
 zstyle ':completion:*' menu no
 # zstyle ':completion:*' menu select=long
 
-# plugin zstyle
-## fzf-tab
-# disable sort when completing `git checkout`
-zstyle ':completion:*:git-checkout:*' sort false
-# set descriptions format to enable group support
-# NOTE: don't use escape sequences (like '%F{red}%d%f') here, fzf-tab will ignore them
-zstyle ':completion:*:descriptions' format '[%d]'
-# custom fzf flags
-if command -v eza >/dev/null 2>&1; then
-	zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
-	zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --color $realpath'
-else
-	echo "eza not installed, using ls instead"
-	zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-	zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-fi
-# zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept
-zstyle ':fzf-tab:*' fzf-flags --color fg:240,bg:230,hl:33,fg+:241,bg+:221,hl+:33,info:33,prompt:33,pointer:166,marker:166,spinner:33 --height ~90% --layout=reverse --info=inline --margin=1 --padding=1 --ansi --preview-window=right:90% --bind=tab:accept --pointer '❯'
-# switch group using `<` and `>`
-zstyle ':fzf-tab:*' switch-group '<' '>'
-# use alt+/ or ctrl+] to select multiple files
-zstyle ':fzf-tab:*' fzf-bindings 'alt-/:toggle,ctrl-]:toggle'
-zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 # Proxy
 if [[ -n "$HTTP_PROXY" ]]; then
@@ -175,24 +160,6 @@ function unproxy() {
 	echo "Proxy has been unset"
 }
 
-
-# fzf
-if command -v fzf >/dev/null 2>&1; then
-	eval "$(fzf --zsh)"
-elif [ -f ~/.fzf.zsh ]; then
-	source ~/.fzf.zsh
-else
-	echo "fzf not installed"
-fi
-
-# zoxide
-[ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
-
-if command -v zoxide >/dev/null 2>&1; then
-	eval "$(zoxide init --cmd cd zsh)"
-else
-	echo "zoxide not installed"
-fi
 
 # pyenv
 if [ -d "$HOME/.pyenv" ]; then
@@ -256,6 +223,50 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	bindkey "$terminfo[kUP3]" up-line-or-history
 	bindkey "$terminfo[kDN3]" down-line-or-history
 fi
+
+
+# plugin zstyle
+## fzf-tab
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+# NOTE: don't use escape sequences (like '%F{red}%d%f') here, fzf-tab will ignore them
+zstyle ':completion:*:descriptions' format '[%d]'
+# custom fzf flags
+if command -v eza >/dev/null 2>&1; then
+	zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+	zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --color $realpath'
+else
+	echo "eza not installed, using ls instead"
+	zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+	zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+fi
+# zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept
+zstyle ':fzf-tab:*' fzf-flags --color fg:240,bg:230,hl:33,fg+:241,bg+:221,hl+:33,info:33,prompt:33,pointer:166,marker:166,spinner:33 --height ~90% --layout=reverse --info=inline --margin=1 --padding=1 --ansi --preview-window=right:90% --bind=tab:accept --pointer '❯'
+# switch group using `<` and `>`
+zstyle ':fzf-tab:*' switch-group '<' '>'
+# use alt+/ or ctrl+] to select multiple files
+zstyle ':fzf-tab:*' fzf-bindings 'alt-/:toggle,ctrl-]:toggle'
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+
+# fzf
+if command -v fzf >/dev/null 2>&1; then
+	eval "$(fzf --zsh)"
+elif [ -f ~/.fzf.zsh ]; then
+	source ~/.fzf.zsh
+else
+	echo "fzf not installed"
+fi
+
+# zoxide
+[ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
+
+if command -v zoxide >/dev/null 2>&1; then
+	eval "$(zoxide init --cmd cd zsh)"
+else
+	echo "zoxide not installed"
+fi
+
 
 rename_title() {
 	local cmd=$1
