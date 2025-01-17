@@ -175,6 +175,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	alias sha512sum='openssl sha512'
 
 	export PATH="/usr/local/sbin:$PATH"
+	export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
 	export PATH="/Applications/gtkwave.app/Contents/Resources/bin/:$PATH"
 	export PATH="$PATH:/Applications/010 Editor.app/Contents/CmdLine" #ADDED BY 010 EDITOR
 
