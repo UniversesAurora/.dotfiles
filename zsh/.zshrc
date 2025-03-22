@@ -186,6 +186,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
 	# iTerm2 shell integration
 	test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+	# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+	fpath=($HOME/.docker/completions $fpath)
+	autoload -Uz compinit
+	compinit
+	# End of Docker CLI completions
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 	# Linux-specific configuration
 	alias ls="ls --color"
