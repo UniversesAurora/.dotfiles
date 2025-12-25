@@ -271,6 +271,12 @@ if [ -d "$HOME/.nvm" ]; then
 	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
+if command -v nvim >/dev/null 2>&1; then
+	export EDITOR=nvim
+elif command -v vim >/dev/null 2>&1; then
+	export EDITOR=vim
+fi
+
 # go apps
 [ -d "$HOME/go/bin" ] && export PATH="$HOME/go/bin:$PATH"
 
