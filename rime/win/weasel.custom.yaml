@@ -52,6 +52,10 @@ patch:
     XshellCore.exe:
       ascii_mode: true
       vim_mode: true
+    Raycast.exe:
+      ascii_mode: true
+    Raycast.UIAccess.exe:
+      ascii_mode: true
     PowerToys.PowerLauncher.exe:
       ascii_mode: true
     1Password.exe:
