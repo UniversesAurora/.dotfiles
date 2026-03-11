@@ -271,6 +271,11 @@ if [ -d "$HOME/.nvm" ]; then
 	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
+# Claude Code
+if [ -d "$HOME/.local/bin" ]; then
+	export PATH="$HOME/.local/bin:$PATH"
+fi
+
 if command -v nvim >/dev/null 2>&1; then
 	export EDITOR=nvim
 elif command -v vim >/dev/null 2>&1; then
