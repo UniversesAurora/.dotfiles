@@ -285,6 +285,11 @@ fi
 # go apps
 [ -d "$HOME/go/bin" ] && export PATH="$HOME/go/bin:$PATH"
 
+# OpenClaw Completion
+if [ -f ~/.openclaw/completions/openclaw.zsh ]; then
+	source ~/.openclaw/completions/openclaw.zsh
+fi
+
 command -v nvim >/dev/null 2>&1 && alias vi='nvim' || alias vi='vim'
 
 rename_title() {
