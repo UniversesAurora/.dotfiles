@@ -280,6 +280,11 @@ if [ -d "$HOME/.local/share/pnpm" ]; then
 esac
 fi
 
+# Added by LM Studio CLI (lms)
+if [ -d "$HOME/.lmstudio/bin" ]; then
+	export PATH="$PATH:$HOME/.lmstudio/bin"
+fi
+
 # Claude Code
 if [ -d "$HOME/.local/bin" ]; then
 	export PATH="$HOME/.local/bin:$PATH"
